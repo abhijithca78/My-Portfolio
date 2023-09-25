@@ -59,22 +59,18 @@
         <h1 class="cont">Contact</h1>
     </section>
     <div class="container">
-        <form action="thankyou.html">
-          <label for="fname">First Name</label>
-          <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+        <form onsubmit="sendEmail(); reset(); return false;" action="thankyou.html">
+          <label for="fname">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name.." required>
       
-          <label for="lname">Last Name</label>
-          <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
-      
-          <label for="country">Country</label>
-          <select id="country" name="country" required>
-            <option value="India">India</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
-          </select>
+          <label for="lname">Email</label>
+          <input type="text" id="email" name="email" placeholder="Your Email ID.." required>
       
           <label for="subject">Subject</label>
-          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+          <input type="text" id="subject" name="subject" placeholder="Write your Subject.." required>
+
+          <label for="subject">Mail</label>
+          <textarea id="mail" name="mail" placeholder="Write something.." style="height:190px" required></textarea>
       
           <input type="submit" value="Submit">
         </form>
@@ -82,5 +78,21 @@
 
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="script.js"></script>
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendEmail(){
+        Email.send({
+        Host : "smtp25.elasticemail.com",
+        Username : "onlinebooksellingsystem@gmail.com",
+        Password : "144F6A8C25D4B5F7BD5B8A958FB62421BB14oBSS@560086",
+        To : 'rachanasanda7@gmail.com',
+        From : document.getElementById("email").value,
+        Subject : document.getElementById("subject").value,
+        Body : document.getElementById("mail").value
+        }).then(
+          message => alert(message)
+        );
+      }
+    </script>
 </body>
 </html>

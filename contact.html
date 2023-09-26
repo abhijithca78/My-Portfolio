@@ -59,18 +59,22 @@
         <h1 class="cont">Contact</h1>
     </section>
     <div class="container">
-        <form onsubmit="sendEmail(); reset(); return false;" action="thankyou.html">
+        <form action="https://formsubmit.co/onlinebooksellingsystem@gmail.com" method="POST" >
           <label for="fname">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name.." required>
+          <input type="text" id="Name" name="name" placeholder="Your name.." required>
+
+          <input type="hidden" name="_next" value="https://abhijithca-portfolio.netlify.app/thankyou.html">
       
           <label for="lname">Email</label>
-          <input type="text" id="email" name="email" placeholder="Your Email ID.." required>
+          <input type="email" id="Email" name="email" placeholder="Your Email ID.." required>
+
+          <input type="hidden" name="_captcha" value="false">
       
           <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="Write your Subject.." required>
+          <input type="text" id="Subject" name="subject" placeholder="Write your Subject.." required>
 
-          <label for="subject">Mail</label>
-          <textarea id="mail" name="mail" placeholder="Write something.." style="height:190px" required></textarea>
+          <label for="Message">Message</label>
+          <textarea id="Message" name="Message" placeholder="Write something.." style="height:190px" required></textarea>
       
           <input type="submit" value="Submit">
         </form>
@@ -78,14 +82,14 @@
 
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="script.js"></script>
-    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <!-- <script src=" https://smtpjs.com/v3/smtp.js"></script>
     <script>
       function sendEmail(){
         Email.send({
         Host : "smtp25.elasticemail.com",
         Username : "onlinebooksellingsystem@gmail.com",
         Password : "144F6A8C25D4B5F7BD5B8A958FB62421BB14oBSS@560086",
-        To : 'rachanasanda7@gmail.com',
+        To : 'onlinebooksellingsystem@gmail.com',
         From : document.getElementById("email").value,
         Subject : document.getElementById("subject").value,
         Body : document.getElementById("mail").value
@@ -93,6 +97,6 @@
           message => alert(message)
         );
       }
-    </script>
+    </script> -->
 </body>
 </html>
